@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase 登入頁面</title>
+</head>
+<body>
+  <h2>登入帳號</h2>
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="密碼"><br><br>
+  <button onclick="login()">登入</button>
+
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+
+  <script>
+    // ⬇️ 把下面這段 firebaseConfig 換成你自己專案的設定
+    const firebaseConfig = {
+    apiKey: "AIzaSyAdr9fZQiSGqzNmoywgVFTCyf7pvQ6QxC8",
+    authDomain: "bfst-f3483.firebaseapp.com",
+    projectId: "bfst-f3483",
+    storageBucket: "bfst-f3483.firebasestorage.app",
+    messagingSenderId: "141115663587",
+    appId: "1:141115663587:web:b36386b5a1bf0f934d51d6",
+    measurementId: "G-XS7MJ0XHD2"
+  };
+
+    // 初始化 Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // 登入功能
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          alert("登入成功！");
+          console.log("登入成功的使用者：", userCredential.user);
+          // 你可以在這裡導向其他頁面
+          // window.location.href = "dashboard.html";
+        })
+        .catch(error => {
+          alert("登入失敗：" + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
