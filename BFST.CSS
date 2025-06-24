@@ -1,0 +1,307 @@
+body{
+    background-color: rgb(26, 26, 26);
+}
+.banner {
+      width: 70%;
+      height: auto; /* 高度佔據視窗高度的一半 */
+      object-fit: cover; /* 保持圖片比例並裁切 */
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+#main {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(26, 26, 26);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 15px;
+    position: relative;
+}
+#bt{
+    position: absolute;
+    color: rgb(46, 46, 46);
+    top: 27px;
+    left:30%;
+    font-size: 60px;
+}
+#bt2{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 120px;
+    left:40%;
+    font-size: 15px;
+}
+#bt3{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 190px;
+    left:20%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt4{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 165px;
+    left:27%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt5{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 195px;
+    left:40%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt6{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 220px;
+    left:49%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt7{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 175px;
+    left:53%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt8{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 195px;
+    left:62%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt9{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 570px;
+    left:70%;
+    font-size: 15px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt10{
+    position: absolute;
+    color: rgb(76, 75, 75);
+    top: 500px;
+    left:25%;
+    font-size: 20px;
+    display: none;
+    transition: color 2.2s ease;
+}
+#bt3:hover{
+    color: rgb(205, 205, 205);
+}
+#bt4:hover{
+    color: rgb(205, 205, 205);
+}
+#bt5:hover{
+    color: rgb(205, 205, 205);
+}
+#bt6:hover{
+    color: rgb(205, 205, 205);
+}
+#bt7:hover{
+    color: rgb(205, 205, 205);
+}
+#bt8:hover{
+    color: rgb(205, 205, 205);
+}
+#bt9:hover{
+    color: rgb(205, 205, 205);
+}
+#bt10:hover{
+    color: rgb(205, 205, 205);
+}
+#p1{
+    display: block;
+}
+#p2{
+    display: none;
+}
+
+
+
+
+
+    #ft10 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft10.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+
+    #ft9 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft9.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+    #ft8 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft8.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+    #ft7 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft7.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+    #ft6 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft6.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+    #ft5 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft5.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+    #ft4 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft4.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+    #ft3 {
+      position: fixed;
+      top: -100px; /* start above the screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: top 0.8s ease, opacity 0.8s ease;
+      z-index: 999;
+    }
+
+    /* When activated (add .show), it floats into view */
+    #ft3.show {
+      top: 50px; /* or whatever "above" your current content means */
+      opacity: 1;
+    }
+
+
+
+
+

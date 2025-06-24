@@ -1,36 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>註冊頁面</title>
-  </head>
-  <body>
-    <h1>註冊帳號</h1>
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="register()">註冊</button>
-    
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAdr9fZQiSGqzNmoywgVFTCyf7pvQ6QxC8",
-    authDomain: "bfst-f3483.firebaseapp.com",
-    projectId: "bfst-f3483",
-    storageBucket: "bfst-f3483.firebasestorage.app",
-    messagingSenderId: "141115663587",
-    appId: "1:141115663587:web:b36386b5a1bf0f934d51d6",
-    measurementId: "G-XS7MJ0XHD2"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+<body>
+    <div style="position: absolute; text-align: left; "><img src="./title.png" alt="" style="width: 70%;"></div>
+    <div style="position: relative; text-align: center; top:250px; left: 71%; width: 28%">
+        <a href="./create.html"><img src="./CREA1.png" alt="" style="height: 80px; width: auto;"></a> <br><br>
+        <a href="./login.html"><img src="./LOG IN5.png" alt="" style="height: 80px; width: auto;"></a>
+    </div>
+</body>
 </html>

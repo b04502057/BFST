@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>重寄驗證信 Demo</title>
+</head>
+<body>
+  <h1>重寄驗證信 Demo</h1>
+  Email: <input type="email" id="email"><br>
+  密碼: <input type="password" id="password"><br><br>
+  <button onclick="resend()">重寄驗證信</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      sendEmailVerification
+    } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdr9fZQiSGqzNmoywgVFTCyf7pvQ6QxC8",
+      authDomain: "bfst-f3483.firebaseapp.com",
+      projectId: "bfst-f3483",
+      storageBucket: "bfst-f3483.appspot.com",
+      messagingSenderId: "141115663587",
+      appId: "1:141115663587:web:b36386b5a1bf0f934d51d6",
+      measurementId: "G-XS7MJ0XHD2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.resend = async function() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        return alert("請先輸入 email 和密碼");
+      }
+
+      try {
+        const uc = await signInWithEmailAndPassword(auth, email, password);
+        const user = uc.user;
+
+        await user.reload();
+
+        console.log("📌 userCredential:", uc);
+        console.log("📌 user.email:", user.email);
+        console.log("📌 user.uid:", user.uid);
+
+        if (!user.emailVerified) {
+          await sendEmailVerification(user);
+          alert("驗證信已寄出！");
+        } else {
+          alert("Email 已驗證，請直接登入");
+        }
+        await auth.signOut();
+
+      } catch (e) {
+        console.error("Error:", e.code, e.message);
+        alert("Error: " + e.message);
+      }
+    };
+  </script>
+</body>
+</html>

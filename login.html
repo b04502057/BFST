@@ -2,49 +2,122 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Firebase 登入頁面</title>
+  <title>Log in</title>
 </head>
 <body>
-  <h2>登入帳號</h2>
-  <input type="email" id="email" placeholder="Email"><br><br>
-  <input type="password" id="password" placeholder="密碼"><br><br>
-  <button onclick="login()">登入</button>
+  <div style="text-align: center;">
+      <h2>Log in</h2>
+      Email: <input type="email" id="email" placeholder="Email"><br><br>
+      Password: <input type="password" id="password" placeholder="Password"><br><br>
+      <button onclick="login()">Log in</button> <br><br><br>
+      <h2>Current Info</h2>
+      1. Version: 2025/06/19 <br> <br>
 
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
 
-  <script>
-    // ⬇️ 把下面這段 firebaseConfig 換成你自己專案的設定
+      <br><br>
+      The email server of some institute would block the verification letter. <br><br>
+      If you can't find the letter after one minute after clicking the following button, 
+      please check your spam first. <br><br> If it is not in your 
+      spam, please use email account of other institute to create account. Gmail would work. <br> <br><br>
+      <button onclick="resendVerificationEmail()">Send Verification Letter</button>
+  </div>
+  
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
     const firebaseConfig = {
-    apiKey: "AIzaSyAdr9fZQiSGqzNmoywgVFTCyf7pvQ6QxC8",
-    authDomain: "bfst-f3483.firebaseapp.com",
-    projectId: "bfst-f3483",
-    storageBucket: "bfst-f3483.firebasestorage.app",
-    messagingSenderId: "141115663587",
-    appId: "1:141115663587:web:b36386b5a1bf0f934d51d6",
-    measurementId: "G-XS7MJ0XHD2"
-  };
+      apiKey: "AIzaSyAdr9fZQiSGqzNmoywgVFTCyf7pvQ6QxC8",
+      authDomain: "bfst-f3483.firebaseapp.com",
+      projectId: "bfst-f3483",
+      storageBucket: "bfst-f3483.appspot.com",
+      messagingSenderId: "141115663587",
+      appId: "1:141115663587:web:b36386b5a1bf0f934d51d6",
+      measurementId: "G-XS7MJ0XHD2"
+    };
 
     // 初始化 Firebase
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
     // 登入功能
-    function login() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+    window.login = function () {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-      auth.signInWithEmailAndPassword(email, password)
-        .then(userCredential => {
-          alert("登入成功！");
-          console.log("登入成功的使用者：", userCredential.user);
-          // 你可以在這裡導向其他頁面
-          // window.location.href = "dashboard.html";
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+
+            if (user.emailVerified) {
+              alert(" Log in successful！");
+              console.log("登入成功的使用者：", user);
+              window.location.href = "BFST.html";
+            } else {
+              alert("Please conduct email verification before logging in");
+              // 強制登出未驗證的使用者
+              auth.signOut();
+            }
+          })
+          .catch((error) => {
+            alert("Log in failed：" + error.message);
+            console.error("錯誤代碼：", error.code);
+          });
+      };
+
+
+
+      window.resendVerificationEmail = function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    alert("Please enter your email and password before sending verification letter");
+    return;
+  }
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(async (userCredential) => {
+      const user = userCredential.user;
+
+      // 重新載入使用者資訊，確保 email, uid 有值
+      await user.reload();
+
+      console.log("🔍 user.email:", user.email);
+      console.log("🔍 user.uid:", user.uid);
+      console.log("🔍 user.emailVerified:", user.emailVerified);
+
+      if (user.emailVerified) {
+        alert("Your email is verified, please log in");
+        await auth.signOut();
+        return;
+      }
+
+      // 確保 user 是有效對象後發送驗證信
+      sendEmailVerification(user)
+        .then(() => {
+          alert("Verification letter is sent, please check your email");
+          auth.signOut();
         })
-        .catch(error => {
-          alert("登入失敗：" + error.message);
+        .catch((error) => {
+          console.error("❌ 驗證信發送失敗：", error.code, error.message);
+          alert("Verification letter sending failed：" + error.message);
         });
-    }
+    })
+    .catch((error) => {
+      console.error("❌ 登入失敗：", error.code, error.message);
+
+      if (error.code === "auth/user-not-found") {
+        alert("This account is not registered, please create your account first");
+      } else if (error.code === "auth/wrong-password") {
+        alert("Wrong password");
+      } else {
+        alert("Fail to log in：" + error.message);
+      }
+    });
+};
+
   </script>
 </body>
 </html>

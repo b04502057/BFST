@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boy Friend Support Team</title>
+    <link rel="stylesheet" href="./BFST.CSS">
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="./aaa.png" alt="" class="banner" >
+        <h1 id="bt">Boy Friend Support Team</h1>
+        <p id="bt2">男友支援小組、ボーイフレンドサポートグループ</p>
+        <p id="bt3" >Gift Guy、贈り物のマスター</p>
+        <p id="bt4" >Emotion Guy、気分のマスター</p>
+        <p id="bt5" >Activity Guy、活動のマスター</p>
+        <p id="bt6" >Flower Guy、花のマスター</p>
+        <p id="bt7" >Restaurant Guy、レストランのマスター</p>
+        <p id="bt8" >Behavior guiding Guy、行動指導のマスター</p>
+        <p id="bt9" >Card Guy、カードのマスター</p>
+        <p id="bt10" >Single Guy、シングルのマスター</p>
+    </div>
+
+    <audio id="my-audio" src="./campfire sound.mp3"></audio>
+    <audio id="my-audio2" src="./cello.wav"></audio>
+
+    <div id="main">
+        <div id="p1">
+            <br> Welcome, sad man... <br><br>
+            <button id="b1">Join Meeting</button>
+        </div>
+        <div id="p2">
+            <h3 id="ll">Click here if you need further support <br><br><img src="./link.jpg" alt="" id="lg" style="height: 100px; display: none;"></h3>
+            <br>
+        </div>
+        
+
+
+
+        <div id="ft3"> I'm gift guy. Here is the core of sending gift to girl friends...<br><br>
+            First, make sure if there is anything that she like. <br>
+            (Yes) Send this kind of gift to her with a frequency lower than 0.7. <br>
+            (No) Send her something with touching meaning. The expensive gift should be held until some day you get trouble <br>
+            or some date important for you two. <br>
+            <p id="e3" style="text-align: right;">end conversation</p></div>
+        <div id="ft4"> I'm in charge of the emotion of girlfriends. <br>
+            The fluctuation of their emotion is dynamic, once you fail to take care of it, they will remember it forever and bring out and 
+            slap to your face while you're fighting in the future. <br>
+            Thus, please<p id="e4">end conversation</p></div>
+        <div id="ft5"> sss<br><br><br><br><br><br><br><br><br><br><p id="e5" style="text-align: right;">end conversation</p></div>
+        <div id="ft6"> ddasfaf <br><br><br><br><br><br><br><br> 
+            <br><p id="e6">end conversation</p></div>
+        <div id="ft7"> sss<br><p id="e7">end conversation</p></div>
+        <div id="ft8"> aaa<br><p id="e8">end conversation</p></div>
+        <div id="ft9">  
+            
+            <br><p id="e9">end conversation</p></div>
+        <div id="ft10">I'm single guy...... good <br><br><p id="e10">end conversation</p></div>
+    </div>
+
+    <script type="module">
+        function showParagraph() {
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p1").style.display = "none";
+            const audio = document.getElementById("my-audio");
+            audio.play();
+            document.getElementById("bt3").style.display = "block";
+            document.getElementById("bt4").style.display = "block";
+            document.getElementById("bt5").style.display = "block";
+            document.getElementById("bt6").style.display = "block";
+            document.getElementById("bt7").style.display = "block";
+            document.getElementById("bt8").style.display = "block";
+            document.getElementById("bt9").style.display = "block";
+            document.getElementById("bt10").style.display = "block";
+            }
+        function opp10(){
+            alert("gogo")
+            document.getElementById("bt10").style.display = "block";
+            const audio2 = document.getElementById("my-audio2");
+            audio2.play();
+        }
+
+        document.getElementById("b1").addEventListener("click", showParagraph);
+
+
+
+
+
+        document.getElementById("bt3").addEventListener("click", op3);
+        document.getElementById("bt4").addEventListener("click", op4);
+        document.getElementById("bt5").addEventListener("click", op5);
+        document.getElementById("bt6").addEventListener("click", op6);
+        document.getElementById("bt7").addEventListener("click", op7);
+        document.getElementById("bt8").addEventListener("click", op8);
+        document.getElementById("bt9").addEventListener("click", op9);
+        document.getElementById("bt10").addEventListener("click", op10);
+        document.getElementById("e3").addEventListener("click", end3);
+        document.getElementById("e4").addEventListener("click", end4);
+        document.getElementById("e5").addEventListener("click", end5);
+        document.getElementById("e6").addEventListener("click", end6);
+        document.getElementById("e7").addEventListener("click", end7);
+        document.getElementById("e8").addEventListener("click", end8);
+        document.getElementById("e9").addEventListener("click", end9);
+        document.getElementById("e10").addEventListener("click", end10);
+
+
+
+
+
+
+
+        function op10() {
+            const audio2 = document.getElementById("my-audio2");
+            audio2.play();
+            const el = document.getElementById("ft10");
+            el.classList.add("show");
+        }
+        function op9() {
+            const el = document.getElementById("ft9");
+            el.classList.add("show");
+        }
+        function op8() {
+            const el = document.getElementById("ft8");
+            el.classList.add("show");
+        }
+        function op7() {
+            const el = document.getElementById("ft7");
+            el.classList.add("show");
+        }
+        function op6() {
+            const el = document.getElementById("ft6");
+            el.classList.add("show");
+        }
+        function op5() {
+            const el = document.getElementById("ft5");
+            el.classList.add("show");
+        }
+        function op4() {
+            const el = document.getElementById("ft4");
+            el.classList.add("show");
+        }
+        function op3() {
+            const el = document.getElementById("ft3");
+            el.classList.add("show");
+        }
+
+
+        function line(){
+            document.getElementById("lg").style.display = "block";
+        }
+
+        document.getElementById("ll").addEventListener("click", line);
+
+
+
+
+        function end3(){
+            const el = document.getElementById("ft3");
+            el.classList.remove("show");
+        }
+        function end4(){
+            const el = document.getElementById("ft4");
+            el.classList.remove("show");
+        }
+        function end5(){
+            const el = document.getElementById("ft5");
+            el.classList.remove("show");
+        }
+        function end6(){
+            const el = document.getElementById("ft6");
+            el.classList.remove("show");
+        }
+        function end7(){
+            const el = document.getElementById("ft7");
+            el.classList.remove("show");
+        }
+        function end8(){
+            const el = document.getElementById("ft8");
+            el.classList.remove("show");
+        }
+        function end9(){
+            const el = document.getElementById("ft9");
+            el.classList.remove("show");
+        }
+        function end10(){
+            const el = document.getElementById("ft10");
+            el.classList.remove("show");
+        }
+
+
+
+
+
+
+
+
+
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAdr9fZQiSGqzNmoywgVFTCyf7pvQ6QxC8",
+    authDomain: "bfst-f3483.firebaseapp.com",
+    projectId: "bfst-f3483",
+    storageBucket: "bfst-f3483.firebasestorage.app",
+    messagingSenderId: "141115663587",
+    appId: "1:141115663587:web:b36386b5a1bf0f934d51d6",
+    measurementId: "G-XS7MJ0XHD2"
+  };
+
+  // 初始化Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Set Firebase Authentication persistence to local
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    // Check if the user is signed in
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
+        console.log("User is signed in", user);
+        // You can proceed with the logic to show the authenticated user page
+      } else {
+        // User is not signed in
+        console.log("No user signed in", user);
+        window.location.href = "login.html"; // Redirect to login page
+      }
+    });
+  })
+  .catch((error) => {
+    // Handle errors
+    console.error("Error setting persistence", error);
+  });
+
+
+
+
+
+
+    </script>
+</body>
+</html>
