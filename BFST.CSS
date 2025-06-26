@@ -142,7 +142,7 @@ body{
 
     #ft10 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -163,7 +163,7 @@ body{
 
     #ft9 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -183,7 +183,7 @@ body{
 
     #ft8 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -203,7 +203,7 @@ body{
 
     #ft7 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -223,7 +223,7 @@ body{
 
     #ft6 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -243,7 +243,7 @@ body{
 
     #ft5 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -263,7 +263,7 @@ body{
 
     #ft4 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
@@ -283,7 +283,7 @@ body{
 
     #ft3 {
       position: fixed;
-      top: -100px; /* start above the screen */
+      top: -500px; /* start above the screen */
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.8);
